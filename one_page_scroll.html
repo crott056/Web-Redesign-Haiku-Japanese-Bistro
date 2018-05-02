@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Haiku Japanese Bistro </title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('small_background-01.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .wrapper1 {
+            width:1180px;
+            height:450px;
+            background-color: white;
+            position: relative;
+            margin: auto;
+            margin-bottom: 200px;
+        }
+
+        .wrapper2 {
+            width:1180px;
+            height:1500px;
+            background-color: white;
+            position: relative;
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 200px;
+        }
+
+        .wrapper3 {
+            width:1180px;
+            height:900px;
+            background-color: white;
+            position: relative;
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 200px;
+        }
+
+        .wrapper4 {
+            width:1180px;
+            height:1300px;
+            background-color: white;
+            position: relative;
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 200px;
+        }
+
+        .wrapper5 {
+            width:1180px;
+            height:650px;
+            background-color: white;
+            position: relative;
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 200px;
+        }
+
+        .wrapper6 {
+            width:1180px;
+            height:1370px;
+            background-color: white;
+            position: relative;
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 200px;
+        }
+
+        .back {
+            overflow: hidden;
+        }
+
+        .sliding-background {
+            background: url("new-01.jpg") repeat-x;
+            height: 500px;
+            width: 5076px;
+            animation: slide 60s linear infinite;
+        }
+
+        @keyframes slide{
+            0%{
+                transform: translate3d(0, 0, 0);
+            }
+            100%{
+                transform: translate3d(-1692px, 0, 0);
+            }
+        }
+
+        .title {
+            width: 1160px;
+            height: 450px;
+            color: black;
+            background-blend-mode: overlay;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h2 {
+            display: inline;
+            padding: 50px;
+            font-family: "Josefin Sans";
+            size: 24px;
+            font-weight: bold;
+            color: black;
+        }
+
+
+        nav {
+            width: 1000px;
+            height: 100px;
+            background-color: white;
+            color: black;
+            margin: 0 auto;
+            padding-top: 75px;
+            text-align: center;
+            font-size: medium;
+        }
+
+        a:link {
+            text-decoration: none;
+            color:gray;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color:black;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color:lightslategrey;
+        }
+
+        a:active {
+            text-decoration: none;
+            color:darkslategrey;
+        }
+
+        h5 {
+            font-family: "Josefin Sans";
+            font-size: 28pt;
+            font-weight:lighter;
+        }
+
+        #section-02 {
+            width: 1180px;
+            height: 400px;
+            background-color: white;
+            text-align: center;
+            padding-top: 50px;
+            font-size: 30pt;
+            font-style: normal;
+        }
+
+        #section-03 {
+            width: 1180px;
+            height: 800px;
+            background-color: white;
+            text-align: center;
+            padding-top: 0px;
+            font-size: 30pt;
+            font-style: normal;
+            padding-left: 50px;
+        }
+
+        #section-04 {
+            width: 1180px;
+            height: 430px;
+            background-color: white;
+            text-align: center;
+            padding-top: 50px;
+            font-size: 30pt;
+            font-style: normal;
+        }
+
+        #section-05 {
+            width: 1180px;
+            height: 500px;
+            background-color: white;
+            text-align: center;
+            padding-top: 50px;
+            font-size: 30pt;
+            font-style: normal;
+        }
+
+        #section-06 {
+            width: 1180px;
+            height: 700px;
+            background-color: white;
+            text-align: center;
+            padding-top: 50px;
+            font-size: 30pt;
+            font-style: normal;
+        }
+
+        img {
+            margin: 5px;
+        }
+
+        table {
+            horiz-align: center;
+            border-collapse: separate;
+            border-spacing: 30px 30px;
+            max-width: 600px;
+        }
+
+        td {
+            padding: 10px;
+        }
+        td:hover{
+            background-color: #DDDDDD;
+        }
+
+
+        .shadowed {
+            -moz-box-shadow: 3px 3px 5px 6px #999;
+            -webkit-box-shadow: 3px 3px 5px 6px #999;
+            box-shadow: 3px 3px 5px 6px #999;
+        }
+
+        h3 {
+            text-align: center;
+            padding: 50px;
+            font-family: "Orator Std";
+            font-size: 30px;
+            color: black;
+        }
+
+        input[type=text], select, textarea {
+            width: 1100px;
+            font-family: "Orator Std";
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical
+        }
+
+        input[type=submit] {
+            background-color: black;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: "Orator Std";
+        }
+
+        input[type=submit]:hover {
+            background-color: slategray;
+        }
+
+        .contact_type {
+            font-family: "Orator Std";
+            font-size: 24px;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: white;
+            padding: 20px;
+        }
+
+        p {
+            display: inline;
+            padding: 24px;
+            font-family: "Josefin Sans";
+            font-size:30px;
+            font-weight: normal;
+            color: black;
+        }
+
+        .left {
+              float: left;
+              padding-left: 30px;
+          }
+
+        .left2 {
+            float: left;
+        }
+
+        h6 {
+            color: white;
+            align-content: center;
+            font-size: 18px;
+        }
+
+        footer {
+            width: 1180px;
+            height: 75px;
+            background-color: black;
+            bottom: 0;
+            text-align: center;
+            font-family: "Orator Std";
+            padding-top: 10px;
+            align-content: left;
+        }
+
+       </style>
+
+</head>
+<body>
+<div class="back"></div>
+
+<div id="#top"></div>
+
+<div class="wrapper1">
+
+    <div class="title">
+        <img src="new%20title-01.jpg" width="1160px" height="440px"/>
+
+    </div> <!------end of wrapper-->
+
+    <div class="wrapper2">
+    <nav>
+        <a href="#section-02"><p id="nav-section-02">ABOUT</p></a>
+        <a href="#section-03"><p id="nav-section-03">GALLERY</p></a>
+        <a href="#section-04"><p id="nav-section-04">MENU</p></a>
+        <a href="#section-05"><p id="nav-section-05">DELIVERY</p></a>
+        <a href="#section-05"><p id="nav-section-06">INFO</p></a>
+    </nav>
+    <br>
+    <br>
+
+    <div class="back">
+        <div class="sliding-background"></div>
+    </div>
+
+    <div id="top"></div>
+
+    <div id="section-01">
+    </div>
+
+    <div id="section-02">
+        <h2>A B O U T</h2>
+        <br>
+        <br>
+        <h5>Here at Haiku, Japanese bistro, we are a distinguished <br> sushi restaurant offering many different
+            types of Japanese cuisine <br> with a fun space to get together with family and friends. <br> We offer affordable and
+            unique dishes in the heart <br> of Minneapolis and the University of Minnesota campus.</h5>
+    </div>
+
+</div> <!------end of wrapper-->
+
+<div class="wrapper3">
+
+    <div id="section-03">
+        <br>
+        <br>
+        <h2>G A L L E R Y</h2>
+        <br>
+        <br>
+        <table>
+        <tr>
+            <td class="shadowed">
+               <img src="dinner.jpg" height="200" width="300"/>
+            </td>
+            <td class="shadowed">
+                <img src="h7.jpg" height="200" width="300" />
+            </td>
+            <td class="shadowed">
+                <img src="h8.jpg" height="200" width="300" />
+            </td>
+        </tr>
+        <tr>
+            <td class="shadowed">
+                <img src="h9.jpg" height="200" width="300" />
+            </td>
+            <td class="shadowed">
+               <img src="h10.jpg" height="200" width="300" />
+            </td>
+            <td class="shadowed">
+                <img src="happy_hour.jpg" height="200" width="300"/>
+            </tr>
+       </table>
+    </div>
+
+</div> <!------end of wrapper-->
+
+<div class="wrapper4">
+
+
+    <div id="section-04">
+        <br>
+        <h2>M E N U</h2>
+        <div>
+            <a href="menu%20copy1.pdf">
+                <img src="lunchndinner.jpg" height="500" width="500"/></a>
+            <a href="menu%20copy3.pdf">
+                <img src="mainmenu.jpg" height="500" width="500"/></a>
+            <a href="menu%20copy2.pdf">
+                <img src="kidsnspecmenu.jpg" height="500" width="500"/></a>
+            <a href="menu%20copy4.pdf">
+                <img src="appsnsaladmenu.jpg" height="500" width="500"/></a>
+        </div>
+
+
+    </div>
+
+</div> <!------end of wrapper-->
+
+
+<div class="wrapper5">
+    <div id="section-05">
+        <br>
+        <h2>D E L I V E R Y</h2>
+        <br>
+        <br>
+        <div>
+            <a href="https://www.bitesquad.com/food/haiku-japanese-bistro/260">
+                <img src="bite_squad.jpg" height="380" width="400"/></a>
+
+            <a href="https://www.beyondmenu.com/33965/minneapolis/haiku-japanese-bistro-minneapolis-55414.aspx#lunch-menu">
+                <img src="delivery.jpg" height="380" width="400"/></a>
+        </div>
+
+    </div>
+</div> <!------end of wrapper-->
+
+<div class="wrapper6">
+
+    <div id="section-06">
+        <br>
+        <h2>I N F O</h2>
+        <br>
+        <h3>OPEN HOURS<br>
+            mon–wed:11:00am-10:00pm
+            <br>thu–sat:11:00am-11:00pm
+            <br>sun:12:00pm-10:00pm</h3>
+        <div class="google_map">
+            <iframe width="400" height="300"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11290.142146027974!2d-93.229332!3d44.973431!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x246282ab8acc9b4c!2sHaiku+Japanese+Bistro!5e0!3m2!1sen!2sus!4v1522619289669" width="600" height="450" frameborder="0" style="border:0" allowfullscreen>
+            </iframe>
+        </div>
+        </div>
+
+        <div class="container">
+            <form action="action_page.php">
+
+                <label for="fname" class="contact_type">first name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+                <label for="lname" class="contact_type">last name</label>
+                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+                <label for="country" class="contact_type">country</label>
+                <select id="country" name="country">
+                    <option value="australia">Australia</option>
+                    <option value="canada">Canada</option>
+                    <option value="usa">USA</option>
+                </select>
+
+                <label for="subject" class="contact_type">subject</label>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+                <input type="submit" value="Submit">
+
+            </form>
+        </div>
+
+        <footer>
+                <a class="left"><img src="Asset%201.png"></a>
+                <a href="#top"> <h6 class="left2"> BACK TO TOP
+                <Br>Copyright @ 2013 all right reserved Haiku Restaurant.
+                    <br> Designed and hosted by Ryan Crotty</h6></a>
+
+        </footer>
+</div> <!------end of wrapper-->
+
+<script>
+    $(document).ready(function () {
+        // Add smooth scrolling to all links
+        $("a").on('click', function (event) {
+
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function () {
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+    });
+</script>
+</div>
+</body>
+</html>
